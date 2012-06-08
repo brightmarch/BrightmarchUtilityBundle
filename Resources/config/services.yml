@@ -1,0 +1,7 @@
+parameters:
+#    brightmarch_utility.example.class: Brightmarch\UtilityBundle\Example
+
+services:
+#    brightmarch_utility.example:
+#        class: %brightmarch_utility.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
