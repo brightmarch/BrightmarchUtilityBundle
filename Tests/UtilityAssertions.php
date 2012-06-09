@@ -1,8 +1,8 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Tests;
+namespace Brightmarch\Bundle\UtilityBundle\Tests;
 
-use Brightmarch\UtilityBundle\Utility\Parser\JsonParser;
+use Brightmarch\Bundle\UtilityBundle\Utility\Parser\JsonParser;
 
 trait UtilityAssertions
 {

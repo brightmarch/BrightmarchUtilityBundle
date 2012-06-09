@@ -1,9 +1,9 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Tests\Unit\Utility\Hasher;
+namespace Brightmarch\Bundle\UtilityBundle\Tests\Unit\Utility\Hasher;
 
-use Brightmarch\UtilityBundle\Utility\Hasher\BcryptHasher;
-use Brightmarch\UtilityBundle\Tests\TestCase;
+use Brightmarch\Bundle\UtilityBundle\Utility\Hasher\BcryptHasher;
+use Brightmarch\Bundle\UtilityBundle\Tests\TestCase;
 
 /**
  * @group BrightmarchUtilityBundle

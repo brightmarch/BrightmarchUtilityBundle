@@ -1,6 +1,6 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Utility;
+namespace Brightmarch\Bundle\UtilityBundle\Utility;
 
 /**
  * Common string functions.

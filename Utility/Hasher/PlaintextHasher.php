@@ -1,8 +1,8 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Utility\Hasher;
+namespace Brightmarch\Bundle\UtilityBundle\Utility\Hasher;
 
-use Brightmarch\UtilityBundle\Utility\Hasher\AbstractHasher;
+use Brightmarch\Bundle\UtilityBundle\Utility\Hasher\AbstractHasher;
 
 /**
  * Hasher class that does absolutely nothing. Simply returns the string passed in.

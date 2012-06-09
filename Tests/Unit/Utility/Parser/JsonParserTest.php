@@ -1,9 +1,9 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Tests\Unit\Utility\Parser;
+namespace Brightmarch\Bundle\UtilityBundle\Tests\Unit\Utility\Parser;
 
-use Brightmarch\UtilityBundle\Utility\Parser\JsonParser;
-use Brightmarch\UtilityBundle\Tests\TestCase;
+use Brightmarch\Bundle\UtilityBundle\Utility\Parser\JsonParser;
+use Brightmarch\Bundle\UtilityBundle\Tests\TestCase;
 
 use \StdClass;
 

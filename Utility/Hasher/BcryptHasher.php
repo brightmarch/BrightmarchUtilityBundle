@@ -1,9 +1,9 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Utility\Hasher;
+namespace Brightmarch\Bundle\UtilityBundle\Utility\Hasher;
 
-use Brightmarch\UtilityBundle\Utility\Hasher\AbstractHasher;
-use Brightmarch\UtilityBundle\Utility\StringUtility;
+use Brightmarch\Bundle\UtilityBundle\Utility\Hasher\AbstractHasher;
+use Brightmarch\Bundle\UtilityBundle\Utility\StringUtility;
 
 /**
  * Hashes a string using the bcrypt algorithm with the blowfish cipher.

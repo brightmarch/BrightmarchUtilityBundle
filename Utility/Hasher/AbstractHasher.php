@@ -1,6 +1,6 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Utility\Hasher;
+namespace Brightmarch\Bundle\UtilityBundle\Utility\Hasher;
 
 /**
  * Root class for all hashing classes.

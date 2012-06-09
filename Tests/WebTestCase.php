@@ -1,8 +1,8 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Tests;
+namespace Brightmarch\Bundle\UtilityBundle\Tests;
 
-use Brightmarch\UtilityBundle\Tests\UtilityAssertions;
+use Brightmarch\Bundle\UtilityBundle\Tests\UtilityAssertions;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as SymfonyWebTestCase;
 

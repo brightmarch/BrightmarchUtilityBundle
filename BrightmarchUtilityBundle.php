@@ -1,6 +1,6 @@
 <?php
 
-namespace Brightmarch\UtilityBundle;
+namespace Brightmarch\Bundle\UtilityBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

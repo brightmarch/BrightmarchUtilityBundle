@@ -1,6 +1,6 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\Utility\Parser;
+namespace Brightmarch\Bundle\UtilityBundle\Utility\Parser;
 
 /**
  * Wraps a JSON string into an easy to use class.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Brightmarch\UtilityBundle\DependencyInjection;
+namespace Brightmarch\Bundle\UtilityBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
