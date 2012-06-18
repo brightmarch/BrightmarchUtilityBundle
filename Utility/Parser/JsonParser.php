@@ -15,6 +15,7 @@ class JsonParser
     public function __construct($json)
     {
         $this->json = json_decode($json);
+        $this->jsonArray = json_decode($json, true);
     }
 
     /**
@@ -36,11 +37,21 @@ class JsonParser
     /**
      * Returns the JSON object or array.
      *
-     * @return mixed The JSON object or array.
+     * @return mixed
      */
     public function json()
     {
         return($this->json);
+    }
+
+    /**
+     * Returns the parsed JSON string as a PHP array.
+     *
+     * @return array
+     */
+    public function asArray()
+    {
+        return($this->jsonArray);
     }
 
     /**
