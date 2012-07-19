@@ -35,6 +35,19 @@ class JsonParser
     }
 
     /**
+     * Returns the size of the JSON if it is an array. Returns 0 if
+     * the JSON is not an array.
+     */
+    public function size()
+    {
+        if ($this->isArray()) {
+            return(count($this->json));
+        }
+
+        return(0);
+    }
+
+    /**
      * Returns the JSON object or array.
      *
      * @return mixed
