@@ -17,6 +17,24 @@ abstract class WebTestCase extends SymfonyWebTestCase
     use UtilityAssertions;
 
     /**
+     * Shorthand method to get an entity manager. Returns the default one by default.
+     *
+     * @param string The entity manager name to retrieve.
+     *
+     * @return EntityManager The default entity manager.
+     */
+    protected function getEntityManager($emName = null)
+    {
+        $client = static::createClient();
+        $em = $client->getKernel()
+            ->getContainer()
+            ->get('doctrine')
+            ->getEntityManager($emName);
+
+        return($em);
+    }
+
+    /**
      * Creates a random @email.com email address.
      *
      * @return string A random always unique email address.
