@@ -17,17 +17,29 @@ abstract class WebTestCase extends SymfonyWebTestCase
     use UtilityAssertions;
 
     /**
+     * Shorthand method to get the container of the application.
+     *
+     * @return Container
+     */
+    protected function getContainer()
+    {
+        $client = static::createClient();
+        $container = $client->getKernel()
+            ->getContainer();
+
+        return($container);
+    }
+
+    /**
      * Shorthand method to get an entity manager. Returns the default one by default.
      *
      * @param string The entity manager name to retrieve.
      *
-     * @return EntityManager The default entity manager.
+     * @return EntityManager 
      */
     protected function getEntityManager($emName = null)
     {
-        $client = static::createClient();
-        $em = $client->getKernel()
-            ->getContainer()
+        $em = $this->getContainer()
             ->get('doctrine')
             ->getEntityManager($emName);
 
