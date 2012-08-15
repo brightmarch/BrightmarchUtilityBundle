@@ -27,11 +27,20 @@ class JsonParser
     public function __get($key)
     {
         $value = null;
-        if ($this->isValid() && property_exists($this->json, $key)) {
+        if ($this->isObject() && property_exists($this->json, $key)) {
             $value = $this->json->$key;
         }
 
+        if ($this->isArray() && array_key_exists($key, $this->json)) {
+            $value = $this->json[$key];
+        }
+
         return($value);
+    }
+
+    public function key($key)
+    {
+        return($this->__get($key));
     }
 
     /**
