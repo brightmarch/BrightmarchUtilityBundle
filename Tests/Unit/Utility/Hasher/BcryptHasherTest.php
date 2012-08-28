@@ -3,13 +3,9 @@
 namespace Brightmarch\Bundle\UtilityBundle\Tests\Unit\Utility\Hasher;
 
 use Brightmarch\Bundle\UtilityBundle\Utility\Hasher\BcryptHasher;
-use Brightmarch\Bundle\UtilityBundle\Tests\TestCase;
+use Brightmarch\Bundle\UtilityBundle\Tests\UnitTestCase;
 
-/**
- * @group BrightmarchUtilityBundle
- * @group BrightmarchUtilityBundleUnitBcryptHasher
- */
-class BcryptHasherTest extends TestCase
+class BcryptHasherTest extends UnitTestCase
 {
 
     public function testHashStringCreatesHash()

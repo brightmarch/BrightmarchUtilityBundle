@@ -3,15 +3,11 @@
 namespace Brightmarch\Bundle\UtilityBundle\Tests\Unit\Utility\Parser;
 
 use Brightmarch\Bundle\UtilityBundle\Utility\Parser\JsonParser;
-use Brightmarch\Bundle\UtilityBundle\Tests\TestCase;
+use Brightmarch\Bundle\UtilityBundle\Tests\UnitTestCase;
 
 use \StdClass;
 
-/**
- * @group BrightmarchUtilityBundle
- * @group BrightmarchUtilityBundleUnitJsonParser
- */
-class JsonParserTest extends TestCase
+class JsonParserTest extends UnitTestCase
 {
 
     public function testGetterReturnsJsonValueForValidJson()

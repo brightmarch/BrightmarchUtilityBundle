@@ -3,13 +3,9 @@
 namespace Brightmarch\Bundle\UtilityBundle\Tests\Unit\Utility\Hasher;
 
 use Brightmarch\Bundle\UtilityBundle\Utility\Hasher\PlaintextHasher;
-use Brightmarch\Bundle\UtilityBundle\Tests\TestCase;
+use Brightmarch\Bundle\UtilityBundle\Tests\UnitTestCase;
 
-/**
- * @group BrightmarchUtilityBundle
- * @group BrightmarchUtilityBundleUnitPlaintextHasher
- */
-class PlaintextHasherTest extends TestCase
+class PlaintextHasherTest extends UnitTestCase
 {
 
     public function testHashStringLeavesStringUnchanged()

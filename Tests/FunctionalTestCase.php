@@ -4,14 +4,9 @@ namespace Brightmarch\Bundle\UtilityBundle\Tests;
 
 use Brightmarch\Bundle\UtilityBundle\Tests\UtilityAssertions;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as SymfonyWebTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-/**
- * Base test class for Web and HTTP based unit and functional tests.
- *
- * @author Vic Cherubini <vic@brightmarch.com>
- */
-abstract class WebTestCase extends SymfonyWebTestCase
+abstract class FunctionalTestCase extends WebTestCase
 {
 
     use UtilityAssertions;
@@ -33,11 +28,10 @@ abstract class WebTestCase extends SymfonyWebTestCase
     /**
      * Shorthand method to get an entity manager. Returns the default one by default.
      *
-     * @param string The entity manager name to retrieve.
-     *
+     * @param string $emName
      * @return EntityManager 
      */
-    protected function getEntityManager($emName = null)
+    protected function getEntityManager($emName=null)
     {
         $em = $this->getContainer()
             ->get('doctrine')
@@ -49,7 +43,7 @@ abstract class WebTestCase extends SymfonyWebTestCase
     /**
      * Creates a random @email.com email address.
      *
-     * @return string A random always unique email address.
+     * @return string
      */
     protected function createRandomEmail()
     {

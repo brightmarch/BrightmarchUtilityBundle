@@ -10,9 +10,9 @@ trait UtilityAssertions
     /**
      * Custom assertion for testing that a JSON string has a key that equals a value.
      *
-     * @param string The JSON string.
-     * @param string The expected key in the JSON object.
-     * @param string The expected value of the key in the JSON object.
+     * @param string $json
+     * @param string $key
+     * @param string $value
      */
     public function assertJsonKeyEquals($json, $key, $value)
     {
@@ -25,8 +25,8 @@ trait UtilityAssertions
     /**
      * Custom assertion for testing error messages.
      *
-     * @param string The response text returned from the Controller.
-     * @param string The message being asserted for.
+     * @param string $json
+     * @param string $message
      */
     public function assertJsonErrorEquals($json, $message)
     {
