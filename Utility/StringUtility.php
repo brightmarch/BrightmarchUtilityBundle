@@ -2,11 +2,6 @@
 
 namespace Brightmarch\Bundle\UtilityBundle\Utility;
 
-/**
- * Common string functions.
- *
- * @author Vic Cherubini <vic@brightmarch.com>
- */
 class StringUtility
 {
 
@@ -17,8 +12,8 @@ class StringUtility
     /**
      * Creates a random string of a specified length.
      *
-     * @param integer The length of the random string to create.
-     * @return string A randomly generated string.
+     * @param integer $length
+     * @return string
      */
     public function randomString($length=32)
     {

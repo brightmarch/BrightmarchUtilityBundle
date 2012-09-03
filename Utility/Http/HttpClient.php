@@ -5,16 +5,13 @@ namespace Brightmarch\Bundle\UtilityBundle\Utility\Http;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Slim wrapper on top of cURL. Makes use of the Symfony HttpFoundation
- * library's Request and Response objects.
- *
- * @author Vic Cherubini <vic@brightmarch.com>
- */
 class HttpClient
 {
 
+    /** @var cURL connection */
     public $connection = null;
+
+    /** @var integer */
     public $timeout = 5;
 
     public function __construct($timeout=0)
@@ -30,8 +27,8 @@ class HttpClient
      * Injects a Request object to be sent. The Request object
      * needs to be already hydrated.
      *
-     * @param Request The Request object to send out.
-     * @return boolean Returns true.
+     * @param Request $request
+     * @return boolean
      */ 
     public function addRequest(Request $request)
     {
@@ -56,7 +53,7 @@ class HttpClient
     /**
      * Sends out the request to the server.
      *
-     * @return Response The hydrated Response object.
+     * @return Response
      */
     public function sendRequest()
     {
@@ -83,6 +80,13 @@ class HttpClient
         return($this);
     }
 
+    public function setOption($option, $value)
+    {
+        curl_setopt($this->connection, $option, value);
+
+        return($this);
+    }
+
 
 
     /**
@@ -92,8 +96,8 @@ class HttpClient
      * This method collapses the headers in the Request object
      * to a single array of string headers.
      *
-     * @param Request The Request object with the headers.
-     * @return array An array of headers to send.
+     * @param Request $request
+     * @return array
      */
     private function collapseHeaders(Request $request)
     {
