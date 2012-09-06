@@ -1,0 +1,20 @@
+{
+    "name": "brightmarch/utility-bundle",
+    "description": "A useful Symfony2 Bundle for some common utilities.",
+    "keywords": ["testing","http","symfony","bundle"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vic Cherubini",
+            "email": "vmc@leftnode.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": { "Brightmarch\\Bundle\\UtilityBundle": "" }
+    },
+    "target-dir": "Brightmarch/Bundle/UtilityBundle"
+}
