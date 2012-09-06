@@ -1,15 +1,9 @@
 <?php
 
-namespace Brightmarch\Bundle\UtilityBundle\Utility\Hasher;
+namespace Accthub\ApiBundle\Utility\Hasher;
 
-use Brightmarch\Bundle\UtilityBundle\Utility\Hasher\AbstractHasher;
+use Accthub\ApiBundle\Utility\Hasher\AbstractHasher;
 
-/**
- * Hasher class that does absolutely nothing. Simply returns the string passed in.
- * This is mostly useful for tests where you want fast tests without having to use bcrypt.
- *
- * @author Vic Cherubini <vic@brightmarch.com>
- */
 class PlaintextHasher extends AbstractHasher
 {
 
@@ -22,7 +16,6 @@ class PlaintextHasher extends AbstractHasher
     {
         return($hash === $string);
     }
-
 
 
     protected function buildSalt($prefix)

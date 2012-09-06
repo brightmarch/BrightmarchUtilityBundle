@@ -5,16 +5,13 @@ namespace Brightmarch\Bundle\UtilityBundle\Utility\Http;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Slim wrapper on top of cURL. Makes use of the Symfony HttpFoundation
- * library's Request and Response objects.
- *
- * @author Vic Cherubini <vic@brightmarch.com>
- */
 class HttpClient
 {
 
+    /** @var cURL connection */
     public $connection = null;
+
+    /** @var integer */
     public $timeout = 5;
 
     public function __construct($timeout=0)
@@ -30,23 +27,22 @@ class HttpClient
      * Injects a Request object to be sent. The Request object
      * needs to be already hydrated.
      *
-     * @param Request The Request object to send out.
-     * @return boolean Returns true.
+     * @param Request $request
+     * @return boolean
      */ 
     public function addRequest(Request $request)
     {
-        $headers = $this->collapseHeaders($request);
-
-        $options = array(
+        $options = [
             CURLOPT_HEADER => 0,
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => $request->getUri(),
             CURLOPT_CUSTOMREQUEST => $request->server->get('REQUEST_METHOD'),
-            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_HTTPHEADER => $this->collapseHeaders($request),
+            CURLOPT_COOKIE => $this->collapseCookies($request),
             CURLOPT_USERAGENT => $request->server->get('HTTP_USER_AGENT'),
             CURLOPT_POSTFIELDS => http_build_query($request->request->all()),
             CURLOPT_TIMEOUT => $this->timeout
-        );
+        ];
 
         curl_setopt_array($this->connection, $options);
 
@@ -56,7 +52,7 @@ class HttpClient
     /**
      * Sends out the request to the server.
      *
-     * @return Response The hydrated Response object.
+     * @return Response
      */
     public function sendRequest()
     {
@@ -83,6 +79,13 @@ class HttpClient
         return($this);
     }
 
+    public function setOption($option, $value)
+    {
+        curl_setopt($this->connection, $option, value);
+
+        return($this);
+    }
+
 
 
     /**
@@ -92,17 +95,34 @@ class HttpClient
      * This method collapses the headers in the Request object
      * to a single array of string headers.
      *
-     * @param Request The Request object with the headers.
-     * @return array An array of headers to send.
+     * @param Symfony\Component\HttpFoundation\Request $request
+     * @return array
      */
     private function collapseHeaders(Request $request)
     {
-        $headers = array();
+        $headers = [];
         foreach ($request->headers->all() as $header => $value) {
             $headers[] = sprintf("%s: %s", $header, $value[0]);
         }
 
         return($headers);
+    }
+
+    /**
+     * Turns an array of key-value pairs into an HTTP 
+     * Cookies header string separated by a semi-colon and a space.
+     *
+     * @param Symfony\Component\HttpFoundation\Request $request
+     * @return array
+     */
+    private function collapseCookies(Request $request)
+    {
+        $cookies = [];
+        foreach ($request->cookies->all() as $cookie => $value) {
+            $cookies[] = sprintf("%s=%s", $cookie, $value);
+        }
+
+        return(implode('; ', $cookies));
     }
 
 }

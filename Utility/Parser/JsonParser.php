@@ -2,11 +2,6 @@
 
 namespace Brightmarch\Bundle\UtilityBundle\Utility\Parser;
 
-/**
- * Wraps a JSON string into an easy to use class.
- *
- * @author Vic Cherubini <vic@brightmarch.com>
- */
 class JsonParser
 {
 
@@ -21,8 +16,8 @@ class JsonParser
     /**
      * Magic getter for finding a JSON key.
      *
-     * @param string The key to search for.
-     * @return mixed The matched key's value, null if the key is not found.
+     * @param string $key
+     * @return mixed
      */
     public function __get($key)
     {
@@ -38,14 +33,18 @@ class JsonParser
         return($value);
     }
 
+    /**
+     * Alias for __get().
+     */
     public function key($key)
     {
         return($this->__get($key));
     }
 
     /**
-     * Returns the size of the JSON if it is an array. Returns 0 if
-     * the JSON is not an array.
+     * Returns the size of teh JSON array.
+     *
+     * @return integer
      */
     public function size()
     {
@@ -77,9 +76,9 @@ class JsonParser
     }
 
     /**
-     * Determines if the JSON passed into this class is valid or not.
+     * Decoded JSON is valid.
      *
-     * @return boolean True if the JSON is valid, false otherwise.
+     * @return boolean
      */
     public function isValid()
     {
@@ -87,9 +86,9 @@ class JsonParser
     }
 
     /**
-     * Determines if the decoded JSON string is a PHP object.
+     * Decoded JSON is an object.
      *
-     * @return boolean True if the JSON is a PHP object, false otherwise.
+     * @return boolean
      */
     public function isObject()
     {
@@ -97,9 +96,9 @@ class JsonParser
     }
 
     /**
-     * Determines if the decoded JSON string is a PHP array.
+     * Decoded JSON is an array.
      *
-     * @return boolean True if the JSON is a PHP array, false otherwise.
+     * @return boolean
      */
     public function isArray()
     {
@@ -109,8 +108,8 @@ class JsonParser
     /**
      * Determines if the JSON has root level keys passed in as N number of arguments.
      *
-     * @param string Any number of parameters that should be root level keys.
-     * @return boolean True if the JSON has the root level keys, false otherwise.
+     * @param string $param
+     * @return boolean
      */
     public function hasKeys()
     {
