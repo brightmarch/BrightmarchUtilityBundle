@@ -1,6 +1,6 @@
 {
     "name": "brightmarch/utility-bundle",
-    "description": "A useful Symfony2 Bundle for some common utilities.",
+    "description": "A useful Symfony2 Bundle for some common utilities. Http, Parsing, Hashing, and Testing.",
     "keywords": ["testing","http","symfony","bundle"],
     "type": "symfony-bundle",
     "license": "MIT",
