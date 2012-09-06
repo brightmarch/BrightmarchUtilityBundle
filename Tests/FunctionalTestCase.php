@@ -11,8 +11,8 @@ abstract class FunctionalTestCase extends WebTestCase
 
     use UtilityAssertions;
 
-    /** @var Client */
-    private $_client = null;
+    /** @var Container */
+    private $_container = null;
 
     /**
      * Shorthand method to get the container of the application.
@@ -21,15 +21,13 @@ abstract class FunctionalTestCase extends WebTestCase
      */
     protected function getContainer()
     {
-        if (is_null($this->_client)) {
-            $this->_client = static::createClient();
+        if (is_null($this->_container)) {
+            $this->_container = static::createClient()
+                ->getKernel()
+                ->getContainer();
         }
 
-        $container = $this->_client
-            ->getKernel()
-            ->getContainer();
-
-        return($container);
+        return($this->_container);
     }
 
     /**
