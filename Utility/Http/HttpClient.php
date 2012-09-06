@@ -32,18 +32,17 @@ class HttpClient
      */ 
     public function addRequest(Request $request)
     {
-        $headers = $this->collapseHeaders($request);
-
-        $options = array(
+        $options = [
             CURLOPT_HEADER => 0,
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => $request->getUri(),
             CURLOPT_CUSTOMREQUEST => $request->server->get('REQUEST_METHOD'),
-            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_HTTPHEADER => $this->collapseHeaders($request),
+            CURLOPT_COOKIE => $this->collapseCookies($request),
             CURLOPT_USERAGENT => $request->server->get('HTTP_USER_AGENT'),
             CURLOPT_POSTFIELDS => http_build_query($request->request->all()),
             CURLOPT_TIMEOUT => $this->timeout
-        );
+        ];
 
         curl_setopt_array($this->connection, $options);
 
@@ -96,17 +95,34 @@ class HttpClient
      * This method collapses the headers in the Request object
      * to a single array of string headers.
      *
-     * @param Request $request
+     * @param Symfony\Component\HttpFoundation\Request $request
      * @return array
      */
     private function collapseHeaders(Request $request)
     {
-        $headers = array();
+        $headers = [];
         foreach ($request->headers->all() as $header => $value) {
             $headers[] = sprintf("%s: %s", $header, $value[0]);
         }
 
         return($headers);
+    }
+
+    /**
+     * Turns an array of key-value pairs into an HTTP 
+     * Cookies header string separated by a semi-colon and a space.
+     *
+     * @param Symfony\Component\HttpFoundation\Request $request
+     * @return array
+     */
+    private function collapseCookies(Request $request)
+    {
+        $cookies = [];
+        foreach ($request->cookies->all() as $cookie => $value) {
+            $cookies[] = sprintf("%s=%s", $cookie, $value);
+        }
+
+        return(implode('; ', $cookies));
     }
 
 }
