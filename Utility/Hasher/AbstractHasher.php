@@ -1,6 +1,6 @@
 <?php
 
-namespace Accthub\ApiBundle\Utility\Hasher;
+namespace Brightmarch\Bundle\UtilityBundle\Utility\Hasher;
 
 abstract class AbstractHasher
 {

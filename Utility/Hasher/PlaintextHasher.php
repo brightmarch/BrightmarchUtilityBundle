@@ -1,8 +1,8 @@
 <?php
 
-namespace Accthub\ApiBundle\Utility\Hasher;
+namespace Brightmarch\UtilityBundle\Utility\Hasher;
 
-use Accthub\ApiBundle\Utility\Hasher\AbstractHasher;
+use Brightmarch\UtilityBundle\Utility\Hasher\AbstractHasher;
 
 class PlaintextHasher extends AbstractHasher
 {

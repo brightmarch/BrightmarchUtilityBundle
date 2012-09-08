@@ -1,9 +1,9 @@
 <?php
 
-namespace Accthub\ApiBundle\Utility\Hasher;
+namespace Brightmarch\Bundle\UtilityBundle\Utility\Hasher;
 
-use Accthub\ApiBundle\Utility\Hasher\AbstractHasher;
-use Accthub\ApiBundle\Utility\StringUtility;
+use Brightmarch\Bundle\UtilityBundle\Utility\Hasher\AbstractHasher;
+use Brightmarch\Bundle\UtilityBundle\Utility\StringUtility;
 
 class BcryptHasher extends AbstractHasher
 {
