@@ -27,7 +27,7 @@ abstract class FunctionalTestCase extends WebTestCase
                 ->getContainer();
         }
 
-        return($this->_container);
+        return $this->_container;
     }
 
     /**
@@ -42,19 +42,19 @@ abstract class FunctionalTestCase extends WebTestCase
             ->get('doctrine')
             ->getEntityManager($emName);
 
-        return($em);
+        return $em;
     }
 
     /**
-     * Creates a random @email.com email address.
+     * Creates a random @brightmarch.com email address.
      *
      * @return string
      */
     protected function createRandomEmail()
     {
-        $email = sprintf('%s@email.com', uniqid());
+        $email = sprintf('%s@brightmarch.com', uniqid());
 
-        return(strtoupper($email));
+        return strtolower($email);
     }
 
 }

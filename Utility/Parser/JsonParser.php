@@ -30,7 +30,7 @@ class JsonParser
             $value = $this->json[$key];
         }
 
-        return($value);
+        return $value;
     }
 
     /**
@@ -38,7 +38,7 @@ class JsonParser
      */
     public function key($key)
     {
-        return($this->__get($key));
+        return $this->__get($key);
     }
 
     /**
@@ -49,10 +49,10 @@ class JsonParser
     public function size()
     {
         if ($this->isArray()) {
-            return(count($this->json));
+            return count($this->json);
         }
 
-        return(0);
+        return 0;
     }
 
     /**
@@ -62,7 +62,7 @@ class JsonParser
      */
     public function json()
     {
-        return($this->json);
+        return $this->json;
     }
 
     /**
@@ -72,7 +72,7 @@ class JsonParser
      */
     public function asArray()
     {
-        return($this->jsonArray);
+        return $this->jsonArray;
     }
 
     /**
@@ -82,7 +82,7 @@ class JsonParser
      */
     public function isValid()
     {
-        return(!is_null($this->json));
+        return !is_null($this->json);
     }
 
     /**
@@ -92,7 +92,7 @@ class JsonParser
      */
     public function isObject()
     {
-        return(is_object($this->json));
+        return is_object($this->json);
     }
 
     /**
@@ -102,7 +102,7 @@ class JsonParser
      */
     public function isArray()
     {
-        return(is_array($this->json));
+        return is_array($this->json);
     }
 
     /**
@@ -126,7 +126,7 @@ class JsonParser
             }
         }
 
-        return($keysCount == $matchedKeys && $keysCount > 0);
+        return ($keysCount == $matchedKeys && $keysCount > 0);
     }
 
 }

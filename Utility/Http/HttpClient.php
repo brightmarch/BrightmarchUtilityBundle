@@ -46,7 +46,7 @@ class HttpClient
 
         curl_setopt_array($this->connection, $options);
 
-        return(true);
+        return true;
     }
 
     /**
@@ -61,7 +61,7 @@ class HttpClient
 
         $response = new Response($payload, $statusCode);
 
-        return($response);
+        return $response;
     }
 
     public function close()
@@ -69,21 +69,21 @@ class HttpClient
         curl_close($this->connection);
         $this->connection = null;
 
-        return(true);
+        return true;
     }
 
     public function setTimeout($timeout)
     {
         $this->timeout = (int)abs($timeout);
 
-        return($this);
+        return $this;
     }
 
     public function setOption($option, $value)
     {
         curl_setopt($this->connection, $option, value);
 
-        return($this);
+        return $this;
     }
 
 
@@ -105,7 +105,7 @@ class HttpClient
             $headers[] = sprintf("%s: %s", $header, $value[0]);
         }
 
-        return($headers);
+        return $headers;
     }
 
     /**
@@ -122,7 +122,7 @@ class HttpClient
             $cookies[] = sprintf("%s=%s", $cookie, $value);
         }
 
-        return(implode('; ', $cookies));
+        return implode('; ', $cookies);
     }
 
 }

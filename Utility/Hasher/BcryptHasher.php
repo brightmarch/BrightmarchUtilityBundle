@@ -8,10 +8,7 @@ use Brightmarch\Bundle\UtilityBundle\Utility\StringUtility;
 class BcryptHasher extends AbstractHasher
 {
 
-    /**
-     * The work factor for the bcrypt hash algorithm.
-     * DO NOT CHANGE!
-     */
+    /** @const integer */
     const HASH_WORK_FACTOR = 12;
 
     public function hashString($string)
@@ -19,7 +16,7 @@ class BcryptHasher extends AbstractHasher
         $salt = $this->buildSalt((new StringUtility)->randomString(21));
         $hash = crypt($string, $salt);
 
-        return($hash);
+        return $hash;
     }
 
     public function verifyHash($hash, $string)
@@ -27,14 +24,14 @@ class BcryptHasher extends AbstractHasher
         $prefix = substr($hash, 7, 21);
         $salt = $this->buildSalt($prefix);
         
-        return(crypt($string, $salt) === $hash);
+        return (crypt($string, $salt) === $hash);
     }
 
 
 
     protected function buildSalt($prefix)
     {
-        return(sprintf('$2a$%d$%s$', self::HASH_WORK_FACTOR, $prefix));
+        return sprintf('$2a$%d$%s$', self::HASH_WORK_FACTOR, $prefix);
     }
 
 }
