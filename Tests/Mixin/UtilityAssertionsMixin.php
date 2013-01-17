@@ -1,10 +1,10 @@
 <?php
 
-namespace Brightmarch\Bundle\UtilityBundle\Tests;
+namespace Brightmarch\Bundle\UtilityBundle\Tests\Mixin;
 
 use Brightmarch\Bundle\UtilityBundle\Utility\Parser\JsonParser;
 
-trait UtilityAssertions
+trait UtilityAssertionsMixin
 {
 
     /**
