@@ -68,7 +68,7 @@ abstract class FunctionalTestCase extends WebTestCase
     {
         $em = $this->getContainer()
             ->get('doctrine')
-            ->getEntityManager($emName);
+            ->getManager($emName);
 
         return $em;
     }
